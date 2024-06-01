@@ -1,0 +1,32 @@
+{
+  "name": "@svg-viewer/fileserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"tsc && node ./dist/main.js\"",
+    "passiveTSC": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "cors": "^2.8.5",
+    "epxress": "^0.0.1-security",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.4.5"
+  },
+  "type": "module",
+  "files": [
+    "./dist/*"
+  ],
+  "bin": {
+    "SVGFSFS": "./dist/main.js"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17"
+  }
+}
