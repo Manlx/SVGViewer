@@ -2,14 +2,14 @@ type IconDisplayProps = {
   svgName: string,
   bodyColor?: string,
   svgColor?: string,
-  textColor?: string
+  textColor?: string,
 }
 
 export const IconDisplay: React.FC<IconDisplayProps> = ({
   svgName,
   bodyColor,
   svgColor,
-  textColor
+  textColor,
 }) => {
 
   return (
