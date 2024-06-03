@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildFrontend": "cd packages/frontend && npm run build",
+    "buildFileServer": "cd packages/fileserver && npm run build",
+    "build": "npm run buildFrontend && npm run buildFileServer",
+    "installPack": "npm run build && npm pack && npm install -g svgviewer-1.0.0.tgz",
+    "setup": "npm i && npm run installPack"
   },
   "workspaces": [
     "packages/*"
