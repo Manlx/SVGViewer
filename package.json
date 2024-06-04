@@ -8,8 +8,12 @@
     "buildFrontend": "cd packages/frontend && npm run build",
     "buildFileServer": "cd packages/fileserver && npm run build",
     "build": "npm run buildFrontend && npm run buildFileServer",
-    "installPack": "npm run build && npm pack && npm install -g svgviewer-1.0.0.tgz",
-    "setup": "npm i && npm run installPack"
+    "installPack": "npm run build && npm link",
+    "startFS": "cd packages/fileServer && npm run start",
+    "startFE": "cd packages/frontend && npm run dev",
+    "installFE": "cd packages/frontend && npm i",
+    "installFS": "cd packages/fileServer && npm i",
+    "setup": "npm run installFE && npm run installFS && npm run installPack"
   },
   "workspaces": [
     "packages/*"

@@ -37,41 +37,41 @@ export const IconHolderColorPicker: React.FC<IconHolderColorPickerProps> = ({
   colorValues
 }) => {
 
+  return setColorArr.map((setColor, index) => {
+
   return (
-    <div>
-      {
-        setColorArr.map((setColor, index) => {
+    <div
+      style={{
+        marginTop:"0.5rem",
+        display:"flex",
+        alignItems: "center",
+        flexDirection: "row",
+        backgroundColor:"transparent"
+      }}
+      key={`Color-Input-${index}`}>
 
-          return (
-            <div
-              style={{
-                height:"100%",
-                marginTop:"0.5rem",
-                display:"flex",
-                alignItems: "center"
-              }}
-             key={`Color-Input-${index}`}>
+      <p
+        style={{
+          display: "inline-block",
+          marginRight: "0.5rem",
+          backgroundColor:"transparent"
+        }}>
+      { setColorDescriptionArr[index] || "Setting color for: "}
+      </p>
 
-              <p
-                style={{
-                  display: "inline-block",
-                  marginRight: "0.5rem"
-                }}>
-                  { setColorDescriptionArr[index] || "Setting color for: "}
-              </p>
-                
-              <InputColor                 
-                value={colorValues[index]}
-                type="color" 
-                onChange={(e)=> {
+      <InputColor                 
+        value={colorValues[index]}
+        type="color" 
+        onClick={ (e) => {
+          e.stopPropagation();
+        }}
+        onChange={(e)=> {
 
-                  console.log(e)
-                  setColor(e.target.value)
-                }}/>
-            </div>
-          );
-        })
-      }
+          e.stopPropagation();
+          console.log(e)
+          setColor(e.target.value)
+        }}/>
     </div>
-  )
+    );
+  })
 };

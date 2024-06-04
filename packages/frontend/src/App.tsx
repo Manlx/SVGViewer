@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { IconHolder } from "./components/IconHolder";
 import { IconHolderColorPicker } from "./components/IconHolderColorPicker";
+import { ToolBar } from "./components/ToolBar";
 
 function App() {
 
@@ -50,30 +51,34 @@ function App() {
   }
 
   return (
-    <div>
-      <IconHolder
-        bodyColor={iconDisplayBackground}
-        svgColor={iconDisplaySVGBackground}
-        textColor={iconDisplayTextBackground}
-        svgs={svgs}/>
+  <div>
 
+    <IconHolder
+    bodyColor={iconDisplayBackground}
+    svgColor={iconDisplaySVGBackground}
+    textColor={iconDisplayTextBackground}
+    svgs={svgs}/>
+
+    <ToolBar>
       <IconHolderColorPicker 
         setColorArr={[
-          setIconDisplayBackground,
-          setIconDisplaySVGBackground,
-          setIconDisplayTextBackground
+        setIconDisplayBackground,
+        setIconDisplaySVGBackground,
+        setIconDisplayTextBackground
         ]} 
         colorValues={[
-          iconDisplayBackground,
-          iconDisplaySVGBackground,
-          iconDisplayTextBackground
+        iconDisplayBackground,
+        iconDisplaySVGBackground,
+        iconDisplayTextBackground
         ]}
         setColorDescriptionArr={[
-          "Display Background: ",
-          "Display SVG Background: ",
-          "Display SVG Text Background: "
-        ]} />
-    </div>
+        "Display Background: ",
+        "Display SVG Background: ",
+        "Display SVG Text Background: "
+        ]} />          
+
+    </ToolBar>
+  </div>
   )
 }
 
