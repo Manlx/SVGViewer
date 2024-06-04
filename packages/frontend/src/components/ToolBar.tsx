@@ -4,7 +4,7 @@ import
 from "styled-components";
 
 const BurgerMenu = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0.5rem;
   left: 0.5rem;
   aspect-ratio: 1/1;
@@ -21,7 +21,7 @@ const Menu = styled.div`
   top: 0;
   left: 0;
   height: 100%;
-  width: 25%;
+  width: 20rem;
   background-color: rgba(56,56,56,0.5);
 `;
 
