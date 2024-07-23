@@ -17,7 +17,7 @@ function App() {
 
     setLoading(true);
 
-    fetch("http://localhost:1337/svgs", {
+    fetch("/svgs", {
       method: "GET",
       redirect: "follow"
     })
