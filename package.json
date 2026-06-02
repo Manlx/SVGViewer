@@ -4,7 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildFrontend": "cd packages/frontend && npm run build",
+    "buildFileServer": "cd packages/fileserver && npm run build",
+    "build": "npm run buildFrontend && npm run buildFileServer",
+    "installPack": "npm run build && npm link",
+    "startFS": "cd packages/fileServer && npm run start",
+    "startFE": "cd packages/frontend && npm run dev",
+    "installFE": "cd packages/frontend && npm i",
+    "installFS": "cd packages/fileServer && npm i",
+    "setup": "npm run installFE && npm run installFS && npm run installPack"
   },
   "workspaces": [
     "packages/*"

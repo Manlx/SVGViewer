@@ -2,14 +2,14 @@ type IconDisplayProps = {
   svgName: string,
   bodyColor?: string,
   svgColor?: string,
-  textColor?: string
+  textColor?: string,
 }
 
 export const IconDisplay: React.FC<IconDisplayProps> = ({
   svgName,
   bodyColor,
   svgColor,
-  textColor
+  textColor,
 }) => {
 
   return (
@@ -32,7 +32,7 @@ export const IconDisplay: React.FC<IconDisplayProps> = ({
           backgroundColor: svgColor || "#88d7cf",
           width: "100%",
           height: "10rem",
-          backgroundImage: `url(http://localhost:1337/svg/${svgName})`,
+          backgroundImage: `url(/svg/${svgName})`,
           backgroundSize: "100% 100%"
         }}>
       </div>    
